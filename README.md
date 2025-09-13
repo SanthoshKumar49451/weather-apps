@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather Web Application
 
-## Getting Started
+A responsive full-stack weather application built with Next.js, Tailwind CSS, and Express.js. The app fetches and displays real-time weather data based on the user's current location or searched cities.
 
-First, run the development server:
+Live Demo: https://weather-apps-plum-one.vercel.app/
 
-```bash
+---
+
+## Tech Stack
+
+Frontend:
+- Next.js
+- Tailwind CSS
+
+Backend:
+- Node.js
+- Express.js
+
+API:
+- OpenWeatherMap or WeatherAPI
+
+Deployment:
+- Vercel, Railway, or Render
+
+---
+
+## Pages
+
+Home Page
+- Displays current weather for the user’s location using geolocation
+- Search bar to find weather in other cities
+
+Search History Page
+- Shows a list of all searched cities (persisted via localStorage or database)
+- Clicking a city displays its weather
+
+Weather Details Page
+- Detailed weather information for a selected city
+  - Temperature
+  - Humidity
+  - Wind
+  - Conditions
+  - Other metrics
+
+About Page
+- Information about the app, APIs used, and how weather data is fetched
+
+---
+
+## Backend API Endpoints
+
+- GET /api/weather?city=XYZ → Returns weather data for a given city
+- GET /api/weather/current → Returns weather data based on user’s coordinates
+- POST /api/search → Logs the searched city
+- GET /api/searches → Retrieves previously searched cities
+
+---
+
+## Features
+
+- Real-time weather updates
+- Search for any city
+- Persistent search history using localStorage or backend database
+- Fully responsive design using Tailwind CSS
+- Client-friendly toast notifications for errors
+
+---
+
+## Installation
+
+1. Clone the repository
+git clone https://github.com/SanthoshKumar49451/weather-apps.git
+
+2. Install dependencies
+cd weather-apps
+npm install
+
+
+
+3. Create a `.env` file and add your API key
+WEATHER_API_KEY=YOUR_API_KEY
+
+
+
+4. Run the app
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
